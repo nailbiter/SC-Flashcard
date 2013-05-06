@@ -2,21 +2,21 @@
 /**
  * The editing form code for this question type.
  *
- * @copyright &copy; 2006 YOURNAME
- * @author YOUREMAILADDRESS
+ * @copyright &copy; 2006 Alex Leontiev
+ * @author alozz1991@gmail.com
  * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
- * @package YOURPACKAGENAME
+ * @package sc_flashcard
  *//** */
 
 require_once($CFG->dirroot.'/question/type/edit_question_form.php');
 
 /**
- * QTYPENAME editing form definition.
+ * SC-Flashcard editing form definition.
  * 
  * See http://docs.moodle.org/en/Development:lib/formslib.php for information
  * about the Moodle forms library, which is based on the HTML Quickform PEAR library.
  */
-class question_edit_QTYPEID_form extends question_edit_form {
+class question_edit_sc_flashcard_form extends question_edit_form {
     function definition_inner(&$mform) {
         // TODO, add any form fields you need.
         // $mform->addElement( ... );
@@ -49,7 +49,7 @@ class question_edit_QTYPEID_form extends question_edit_form {
     }
 
     function qtype() {
-        return 'QTYPEID';
+        return 'sc_flashcard';
     }
 }
 ?>

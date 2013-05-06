@@ -28,30 +28,30 @@ chosen two things
 :This is a string of lowercase letters and perhaps underscores that the Moodle code  uses to refer
 to your question type. This needs to be unique, so perhaps start it with your initials. For example,
 all the quetions types I create while working at the OU will be referred to as ou_something. For the
-rest of these instructions, I will assume you have chosen 'myqtypeidentifier'.
+rest of these instructions, I will assume you have chosen 'sc_flashcard'.
 ;The name of your question type
 :This is the name that people will see in the Moodle User-interface (in the English translation).
-For these instructions I will assume you have chosen  'My Question Type Name'.
+For these instructions I will assume you have chosen 'SC-Flashcard'.
 
 Then you need to
 
 # Change all the places TEMPLATE appears in file names to myqtypeidentifier. That is:
-#* rename the top level TEMPLATE directory to myqtypeidentifier.
-#* rename the language file lang/en_utf8/qtype_TEMPLATE.php to lang/en_utf8/qtype_myqtypeidentifier.php
+#* rename the top level TEMPLATE directory to myqtypeidentifier. - done
+#* rename the language file lang/en_utf8/qtype_TEMPLATE.php to lang/en_utf8/qtype_myqtypeidentifier.php - done
 #* rename the help file lang/en_utf8/help/TEMPLATE/TEMPLATE.html to 
-   lang/en_utf8/help/myqtypeidentifier/myqtypeidentifier.html
-#* rename the editing form edit_TEMPLATE_form.php to edit_myqtypeidentifier_form.php.
+   lang/en_utf8/help/myqtypeidentifier/myqtypeidentifier.html - done
+#* rename the editing form edit_TEMPLATE_form.php to edit_myqtypeidentifier_form.php. - done
 # Search and replace 'QTYPEID' with 'myqtypeidentifier' in all the files. You should find:
-#* 2 occurrences in the language file
-#* 1 occurrence in db/install.xml
-#* 5 occurrences in simpletest/testquestiontype.php
-#* 2 occurrences in edit_myqtypeidentifier_form.php
-#* 3 occurrences in questiontype.php
+#* 2 occurrences in the language file - done
+#* 1 occurrence in db/install.xml - done
+#* 5 occurrences in simpletest/testquestiontype.php - done
+#* 2 occurrences in edit_myqtypeidentifier_form.php - done
+#* 3 occurrences in questiontype.php - done
 # Search and replace 'QTYPENAME' with 'My Question Type Name' in all the files. You should find:
-#* 1 occurrence in the help file
-#* 3 occurrences in the language file
-#* 1 occurrence in edit_myqtypeidentifier_form.php
-#* 2 occurrences in questiontype.php
+#* 1 occurrence in the help file - done
+#* 3 occurrences in the language file - done
+#* 1 occurrence in edit_myqtypeidentifier_form.php - done
+#* 2 occurrences in questiontype.php - done
 # Search and replace YOURNAME with your name. (This is only in the comments at  the top of each file
   so it is not critical, but surely you want to take credit for your work.) You should find one occurrence in:
 #* tlang/en_utf8/qtype_myqtypeidentifier.php
