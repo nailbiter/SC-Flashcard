@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the editing form for the sc_flashcard question type.
+ * Serve question type files
  *
- * @package    qtype
- * @subpackage sc_flashcard
+ * @since      2.0
+ * @package    qtype_sc_flashcard
  * @copyright  Alex Leontiev (alozz1991@gmail.com)
  * @author alozz1991@gmail.com
 
@@ -30,26 +30,20 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * sc_flashcard question editing form definition.
- *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
-
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Checks file access for sc_flashcard questions.
+ * @package  qtype_sc_flashcard
+ * @category files
+ * @param stdClass $course course object
+ * @param stdClass $cm course module object
+ * @param stdClass $context context object
+ * @param string $filearea file area
+ * @param array $args extra arguments
+ * @param bool $forcedownload whether or not force download
+ * @param array $options additional options affecting the file serving
+ * @return bool
  */
-class qtype_sc_flashcard_edit_form extends question_edit_form {
-
-    protected function definition_inner($mform) {
-        $this->add_interactive_settings();
-    }
-
-    protected function data_preprocessing($question) {
-        $question = parent::data_preprocessing($question);
-        $question = $this->data_preprocessing_hints($question);
-
-        return $question;
-    }
-
-    public function qtype() {
-        return 'sc_flashcard';
-    }
+function qtype_sc_flashcard_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
+    global $DB, $CFG;
+    require_once($CFG->libdir . '/questionlib.php');
+    question_pluginfile($course, $context, 'qtype_sc_flashcard', $filearea, $args, $forcedownload, $options);
 }
