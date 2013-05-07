@@ -32,17 +32,23 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * sc_flashcard question editing form definition.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2013 Alex Leontiev (alozz1991@gmail.com)
+ * @author alozz1991@gmail.com
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_sc_flashcard_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
-        $this->add_interactive_settings();
+	debugging("definition_inner");
+        //$this->add_interactive_settings();
+        $mform->addElement('editor', 'answer',
+                get_string('answer', 'qtype_sc_flashcard'), array('rows' => 10), $this->editoroptions);
+        $mform->setType('answer', PARAM_RAW);
     }
 
     protected function data_preprocessing($question) {
+	    debugging("data_preprocessing");
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
 
@@ -50,6 +56,7 @@ class qtype_sc_flashcard_edit_form extends question_edit_form {
     }
 
     public function qtype() {
+	debugging('qtype');
         return 'sc_flashcard';
     }
 }
