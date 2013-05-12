@@ -27,10 +27,12 @@
 
 
 defined('MOODLE_INTERNAL') || die();
+require_once($CFG->dirroot.'/question/type/edit_question_form.php');
 
 
 /**
- * sc_flashcard question editing form definition.
+ * sc_flashcard question editing form definition - it defines what teacher sees when he or she
+ * creates/edits existing question.
  *
  * @copyright  2013 Alex Leontiev (alozz1991@gmail.com)
  * @author alozz1991@gmail.com
@@ -42,13 +44,15 @@ class qtype_sc_flashcard_edit_form extends question_edit_form {
     protected function definition_inner($mform) {
 	debugging("definition_inner");
         //$this->add_interactive_settings();
-        $mform->addElement('editor', 'answer',
+        $mform->addElement('editor', 'answerForm',
                 get_string('answer', 'qtype_sc_flashcard'), array('rows' => 10), $this->editoroptions);
-        $mform->setType('answer', PARAM_RAW);
+        $mform->setType('answerForm', PARAM_RAW);
     }
 
+    /** This function is also called when editing. It sets the default values
+     */
     protected function data_preprocessing($question) {
-	    debugging("data_preprocessing");
+	    debugging("data_preprocessing with options ".print_r($question->options,true));
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
 

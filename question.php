@@ -32,11 +32,13 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Represents a sc_flashcard question.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2013 Alex Leontiev (alozz1991@gmail.com)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_sc_flashcard_question extends question_graded_automatically {
+    public $answertext;
+    public $answerid;
 
     public function get_expected_data() {
         // TODO.
